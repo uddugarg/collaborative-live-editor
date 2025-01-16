@@ -1,23 +1,10 @@
-import { Editor } from '@/components/editor/Editor'
-import Header from '@/components/Header'
-import { SignedIn, SignedOut, SignInButton, UserButton } from '@clerk/nextjs'
+import CollaborativeRoom from '@/components/CollaborativeRoom'
 import React from 'react'
 
 const Documents = () => {
   return (
     <div>
-      <Header>
-        <div className="flex w0fit items-center justify-center gap-2">
-          <p className="document-title">Document Title</p>
-        </div>
-        <SignedOut>
-            <SignInButton />
-          </SignedOut>
-          <SignedIn>
-            <UserButton />
-          </SignedIn>
-      </Header>
-      <Editor />
+      <CollaborativeRoom />
     </div>
   )
 }
