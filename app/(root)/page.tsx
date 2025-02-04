@@ -1,14 +1,14 @@
+import AddDocumentBtn from '@/components/AddDocumentBtn'
 import Header from '@/components/Header'
 import { SignedIn, UserButton } from '@clerk/nextjs'
 import { currentUser } from '@clerk/nextjs/server'
 import Image from 'next/image'
 import { redirect } from 'next/navigation'
-// import AddDocumentBtn from '@/components/'x``
 
 const Home = async () => {
 
   const clerkUser = await currentUser();
-  if (!clerkUser) { 
+  if (!clerkUser) {
     redirect('/sign-in')
   }
 
@@ -40,7 +40,10 @@ const Home = async () => {
               className='mx-auto'
             />
 
-            {/* <AddDocumentBtn /> */}
+            <AddDocumentBtn
+              userId={clerkUser.id}
+              email={clerkUser.emailAddresses[0].emailAddress}
+            />
 
           </div>
         )
